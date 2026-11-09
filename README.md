@@ -155,7 +155,7 @@ Provas adicionais na nuvem, contra a URL pública:
 | E3 | Casos de teste | seção 6 |
 | E4 | Diagrama de arquitetura | seção 3 |
 | E5 | Configuração segura | ver abaixo |
-| E6 | README e pitch | este arquivo e o link no topo |
+| E6 | README | este arquivo |
 
 ### E2: prova de persistência
 
