@@ -1,0 +1,19 @@
+{
+  "name": "g01-mural-da-coordenacao",
+  "version": "1.0.0",
+  "description": "Mural da Coordenação - Cloud Challenge (Senac 2026.2)",
+  "main": "src/server.js",
+  "private": true,
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --env-file=.env --watch src/server.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mssql": "^11.0.1"
+  }
+}
