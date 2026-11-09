@@ -1,1 +1,64 @@
-### Requisições da API
+### Requisições da API - Mural da Coordenação
+### Use a extensão "REST Client" do VS Code. Troque @host para testar na Azure.
+
+@host = http://localhost:3000
+
+### Saúde: testa a conexão com o banco (200 ou 503)
+GET {{host}}/health
+
+### RF1: cadastrar tarefa (201)
+POST {{host}}/api/tarefas
+Content-Type: application/json
+
+{
+  "titulo": "Publicar horários do semestre",
+  "responsavel": "Ana Exemplo",
+  "prioridade": "alta",
+  "prazo": "2030-12-31"
+}
+
+### CA1: título com 2 caracteres (400)
+POST {{host}}/api/tarefas
+Content-Type: application/json
+
+{
+  "titulo": "ab",
+  "responsavel": "Ana Exemplo"
+}
+
+### CA2: prazo anterior a hoje (400)
+POST {{host}}/api/tarefas
+Content-Type: application/json
+
+{
+  "titulo": "Tarefa com prazo vencido",
+  "responsavel": "Ana Exemplo",
+  "prazo": "2020-01-01"
+}
+
+### RF2: listar todas (200)
+GET {{host}}/api/tarefas
+
+### RF2: filtro pendentes
+GET {{host}}/api/tarefas?situacao=pendentes
+
+### RF2: filtro concluidas
+GET {{host}}/api/tarefas?situacao=concluidas
+
+### RF4 / CA4: filtro atrasadas (só a pendente com prazo de ontem)
+GET {{host}}/api/tarefas?situacao=atrasadas
+
+### Situação inválida (400)
+GET {{host}}/api/tarefas?situacao=qualquer
+
+### RF3 / CA3: concluir tarefa (200; trocar o 1 pelo id desejado)
+PATCH {{host}}/api/tarefas/1/concluir
+
+### CA3: concluir de novo (409)
+PATCH {{host}}/api/tarefas/2/concluir
+
+### RF5: excluir tarefa (204; trocar o id)
+DELETE {{host}}/api/tarefas/3
+
+### CA5: excluir id inexistente (404)
+DELETE {{host}}/api/tarefas/999999999
