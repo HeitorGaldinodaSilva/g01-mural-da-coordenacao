@@ -15,7 +15,7 @@ Todos os integrantes sabem explicar o fluxo completo do produto, do navegador at
 
 Nível de implantação alcançado: **A (nuvem completa)**, com aplicação no Azure App Service e banco gerenciado Azure SQL criados pelo grupo.
 
-URL pública: https://app-cloud-g01-hgs-a5cbhgecgmfbb4ba.brazilsouth-01.azurewebsites.net
+URL pública: https://app-cloud-g01-hgs-a5cbhgecgmfbb4ba.brazilsouth-01.azurewebsites.net/api/tarefas?situacao=atrasadas / https://app-cloud-g01-hgs-a5cbhgecgmfbb4ba.brazilsouth-01.azurewebsites.net/api/tarefas
 
 ---
 
